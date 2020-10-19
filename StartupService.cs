@@ -22,11 +22,9 @@ namespace LeetCode
 
             Console.WriteLine("Press Ctrl + C to stop the application");
 
-            //while (true)
-            //{
-                new RemoveDuplicatesFromSortedArray().Run();
-                Console.ReadLine();
-            //}
+            //new RemoveDuplicatesFromSortedArray().Run();
+            new BestTimeToBuyAndSellStock().Run();
+            Console.ReadLine();
         }
     }
 }
