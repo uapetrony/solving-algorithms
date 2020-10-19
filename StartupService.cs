@@ -23,7 +23,8 @@ namespace LeetCode
             Console.WriteLine("Press Ctrl + C to stop the application");
 
             //new RemoveDuplicatesFromSortedArray().Run();
-            new BestTimeToBuyAndSellStock().Run();
+            //new BestTimeToBuyAndSellStock().Run();
+            new RotateArray().Run();
             Console.ReadLine();
         }
     }
