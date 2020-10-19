@@ -25,7 +25,8 @@ namespace LeetCode
             //new RemoveDuplicatesFromSortedArray().Run();
             //new BestTimeToBuyAndSellStock().Run();
             //new RotateArray().Run();
-            new ContainsDuplicates().Run();
+            //new ContainsDuplicates().Run();
+            new SingleElement().Run();
             Console.ReadLine();
         }
     }

@@ -7,10 +7,10 @@ namespace LeetCode.Arrays
     /// <summary>
     /// Given an array of integers, find if the array contains any duplicates.
     /// Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
-    /// <remarks>
+    /// </summary>
+    /// /// <remarks>
     /// https://leetcode.com/explore/featured/card/top-interview-questions-easy/92/array/578/
     /// </remarks>
-    /// </summary>
     public class ContainsDuplicates
     {
         /// <summary>
@@ -23,7 +23,7 @@ namespace LeetCode.Arrays
         }
 
         /// <summary>
-        /// Remove duplicates and print result 
+        /// Calculate and print result 
         /// </summary>
         /// <param name="sortedArray"></param>
         public void Run(int[] numbers)
