@@ -26,7 +26,9 @@ namespace LeetCode
             //new BestTimeToBuyAndSellStock().Run();
             //new RotateArray().Run();
             //new ContainsDuplicates().Run();
-            new SingleElement().Run();
+            //new SingleElement().Run();
+            //new IntersectionOfTwoArrays().Run();
+            new PlusOne().Run();
             Console.ReadLine();
         }
     }
