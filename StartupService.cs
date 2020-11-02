@@ -32,7 +32,8 @@ namespace LeetCode
             //new MoveZeroesToTheEnd().Run();
 
             //new Mathematics.FizzBuzzNumbers().Run();
-            new Mathematics.CountPrimeNumbers().Run();
+            //new Mathematics.CountPrimeNumbers().Run();
+            new Mathematics.PowerOfThree().Run();
             Console.ReadLine();
         }
     }
