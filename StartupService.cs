@@ -28,8 +28,10 @@ namespace LeetCode
             //new ContainsDuplicates().Run();
             //new SingleElement().Run();
             //new IntersectionOfTwoArrays().Run();
-            // new PlusOne().Run();
-            new MoveZeroesToTheEnd().Run();
+            //new PlusOne().Run();
+            //new MoveZeroesToTheEnd().Run();
+
+            new Mathematics.FizzBuzzNumbers().Run();
             Console.ReadLine();
         }
     }
