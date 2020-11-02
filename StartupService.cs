@@ -28,7 +28,8 @@ namespace LeetCode
             //new ContainsDuplicates().Run();
             //new SingleElement().Run();
             //new IntersectionOfTwoArrays().Run();
-            new PlusOne().Run();
+            // new PlusOne().Run();
+            new MoveZeroesToTheEnd().Run();
             Console.ReadLine();
         }
     }
