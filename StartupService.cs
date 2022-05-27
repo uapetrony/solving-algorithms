@@ -31,7 +31,8 @@ public class StartupService : IStartup
 
         //new Mathematics.FizzBuzzNumbers().Run();
         //new Mathematics.CountPrimeNumbers().Run();
-        new Mathematics.PowerOfThree().Run();
+        //new Mathematics.PowerOfThree().Run();
+        new Mathematics.RomanToInteger().Run();
         Console.ReadLine();
     }
 }
