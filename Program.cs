@@ -2,43 +2,41 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using System;
 using System.IO;
 
-namespace LeetCode
+namespace LeetCode;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            ConfigureLogging();
+        ConfigureLogging();
 
-            var host = Host.CreateDefaultBuilder()
-                .ConfigureServices((context, services) =>
-                {
-                    services.AddSingleton<IStartup, StartupService>();
-                })
-                .UseSerilog()
-                .Build();
+        var host = Host.CreateDefaultBuilder()
+            .ConfigureServices((context, services) =>
+            {
+                services.AddSingleton<IStartup, StartupService>();
+            })
+            .UseSerilog()
+            .Build();
 
-            var service = host.Services.GetRequiredService<IStartup>();
-            service.Run();
-        }
+        var service = host.Services.GetRequiredService<IStartup>();
+        service.Run();
+    }
 
-        private static void ConfigureLogging()
-        {
-            var builder = new ConfigurationBuilder();
+    private static void ConfigureLogging()
+    {
+        var builder = new ConfigurationBuilder();
 
-            builder.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", false, true)
-                .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development"}.json", true, true)
-                .AddEnvironmentVariables();
+        builder.SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", false, true)
+            .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development"}.json", true, true)
+            .AddEnvironmentVariables();
 
-            Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(builder.Build())
-                .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .CreateLogger();
-        }
+        Log.Logger = new LoggerConfiguration()
+            .ReadFrom.Configuration(builder.Build())
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .CreateLogger();
     }
 }

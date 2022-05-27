@@ -1,7 +1,6 @@
-﻿namespace LeetCode
+﻿namespace LeetCode;
+
+public interface IStartup
 {
-    public interface IStartup
-    {
-        void Run();
-    }
+    void Run();
 }

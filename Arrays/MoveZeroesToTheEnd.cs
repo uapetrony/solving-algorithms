@@ -1,78 +1,73 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace LeetCode.Arrays;
 
-namespace LeetCode.Arrays
+/// <summary>
+/// Given an array nums, write a function to move all 0's to the end of it 
+///     while maintaining the relative order of the non-zero elements.
+/// </summary>
+/// <remarks>
+/// https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
+/// </remarks>
+public class MoveZeroesToTheEnd
 {
     /// <summary>
-    /// Given an array nums, write a function to move all 0's to the end of it 
-    ///     while maintaining the relative order of the non-zero elements.
+    /// Run with test data in place
     /// </summary>
-    /// <remarks>
-    /// https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/567/
-    /// </remarks>
-    public class MoveZeroesToTheEnd
+    public void Run()
     {
-        /// <summary>
-        /// Run with test data in place
-        /// </summary>
-        public void Run()
+        var nums = new int[] { 0, 1, 0, 3, 12 };
+        Run(nums);
+    }
+
+    /// <summary>
+    /// Run algorithm and print result 
+    /// </summary>
+    public static void Run(int[] nums)
+    {
+        Console.WriteLine("Initial array:");
+        ArrayHelper.Print(nums);
+
+        MoveZeroes(nums);
+
+        Console.WriteLine("\nArray after transformation:");
+        ArrayHelper.Print(nums);
+    }
+
+    /// <summary>
+    /// Rearranges elements so that zeroes moved to the end of the array
+    /// </summary>
+    /// <example>
+    /// Input: [0,1,0,3,12]
+    /// Output: [1,3,12,0,0]
+    /// </example>
+    private static void MoveZeroes(int[] nums)
+    {
+        if (nums == null || nums.Length <= 1)
         {
-            var nums = new int[] { 0, 1, 0, 3, 12 };
-            Run(nums);
+            return;
         }
 
-        /// <summary>
-        /// Run algorithm and print result 
-        /// </summary>
-        public void Run(int[] nums)
+        for (var i = nums.Length - 2; i >= 0; i--)
         {
-            Console.WriteLine("Initial array:");
-            ArrayHelper.Print(nums);
-
-            MoveZeroes(nums);
-
-            Console.WriteLine("\nArray after transformation:");
-            ArrayHelper.Print(nums);
+            if (nums[i] == 0)
+            {
+                PopZeroToTheEnd(nums, i);
+            }
         }
 
-        /// <summary>
-        /// Rearranges elements so that zeroes moved to the end of the array
-        /// </summary>
-        /// <example>
-        /// Input: [0,1,0,3,12]
-        /// Output: [1,3,12,0,0]
-        /// </example>
-        private void MoveZeroes(int[] nums)
+        static void PopZeroToTheEnd(int[] nums, int index)
         {
-            if (nums == null || nums.Length <= 1)
+            for (var i = index; i < nums.Length - 1; i++)
             {
-                return;
-            }
-
-            for (var i = nums.Length - 2; i >= 0; i--)
-            {
-                if (nums[i] == 0)
+                var current = nums[i];
+                var next = nums[i + 1];
+                // if next element is 0, then we riched "zeroes area"
+                if (next == 0)
                 {
-                    PopZeroToTheEnd(nums, i);
+                    break;
                 }
-            }
 
-            static void PopZeroToTheEnd(int[] nums, int index)
-            {
-                for (var i = index; i < nums.Length - 1; i++)
-                {
-                    var current = nums[i];
-                    var next = nums[i + 1];
-                    // if next element is 0, then we riched "zeroes area"
-                    if (next == 0)
-                    {
-                        break;
-                    }
-
-                    nums[i] = next;
-                    nums[i + 1] = current;
-                }
+                nums[i] = next;
+                nums[i + 1] = current;
             }
         }
     }
