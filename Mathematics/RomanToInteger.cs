@@ -7,6 +7,17 @@ namespace LeetCode.Mathematics;
 /// </summary>
 public class RomanToInteger
 {
+    private static readonly Dictionary<char, short> _map = new()
+    {
+        { 'I', 1 },
+        { 'V', 5 },
+        { 'X', 10 },
+        { 'L', 50 },
+        { 'C', 100 },
+        { 'D', 500 },
+        { 'M', 1000 }
+    };
+
     /// <summary>
     /// Run with test data in place
     /// </summary>
@@ -41,33 +52,22 @@ public class RomanToInteger
     /// <returns></returns>
     private static int RomanToInt(string s)
     {
-        var map = new Dictionary<string, ushort>
-        {
-            { "I", 1 },
-            { "V", 5 },
-            { "X", 10 },
-            { "L", 50 },
-            { "C", 100 },
-            { "D", 500 },
-            { "M", 1000 }
-        };
-
         // starting from the end: if previous less than current, than substract
         // if equal or less than add
         // also track the maximum number to know from wich number to substract
-        var tempMaximum = 0;
-        var total = 0;
+        short tempMaximum = 0;
+        short total = 0;
         for (var i = s.Length - 1; i >= 0; i--)
         {
-            var current = map[s[i].ToString()];
-            if (current >= tempMaximum)
+            short current = _map[s[i]];
+            if (current < tempMaximum)
             {
-                total += current;
-                tempMaximum = current;
+                total -= current;
             }
             else
             {
-                total -= current;
+                total += current;
+                tempMaximum = current;
             }
         }
 
