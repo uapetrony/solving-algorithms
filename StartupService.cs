@@ -28,11 +28,12 @@ public class StartupService : IStartup
         //new IntersectionOfTwoArrays().Run();
         //new PlusOne().Run();
         //new MoveZeroesToTheEnd().Run();
+        new Arrays.TwoSum().Run();
 
         //new Mathematics.FizzBuzzNumbers().Run();
         //new Mathematics.CountPrimeNumbers().Run();
         //new Mathematics.PowerOfThree().Run();
-        new Mathematics.RomanToInteger().Run();
+        //new Mathematics.RomanToInteger().Run();
         Console.ReadLine();
     }
 }
