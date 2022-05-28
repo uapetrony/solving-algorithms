@@ -28,7 +28,8 @@ public class StartupService : IStartup
         //new IntersectionOfTwoArrays().Run();
         //new PlusOne().Run();
         //new MoveZeroesToTheEnd().Run();
-        new Arrays.TwoSum().Run();
+        //new Arrays.TwoSum().Run();
+        new Arrays.ValidSudoku().Run();
 
         //new Mathematics.FizzBuzzNumbers().Run();
         //new Mathematics.CountPrimeNumbers().Run();
