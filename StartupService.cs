@@ -30,7 +30,8 @@ public class StartupService : IStartup
         //new MoveZeroesToTheEnd().Run();
         //new Arrays.TwoSum().Run();
         //new Arrays.ValidSudoku().Run();
-        new Arrays.RotateImage().Run();
+        //new Arrays.RotateImage().Run();
+        new Arrays.MergeSortedArray().Run();
 
         //new Mathematics.FizzBuzzNumbers().Run();
         //new Mathematics.CountPrimeNumbers().Run();
